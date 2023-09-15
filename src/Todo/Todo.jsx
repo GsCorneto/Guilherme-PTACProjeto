@@ -9,10 +9,10 @@ export default function ToDo() {
    const salvar = (e) =>{
     e.preventDefault();
     setLista([...lista, { //... serve para adicionar segmentos 
-        atividade:atividade, identidade:identidade
+        classe:classe, arma:arma, identidade:identidade
     }]);
     setIdentidade(identidade + 1)
-    alert("armazenado!")
+    alert("Inscrito no torneio!")
    };
 
      const remover = (id) =>{
@@ -28,8 +28,8 @@ export default function ToDo() {
 
     return (
         <div>
-            <h1>Lista de Atividades</h1>
-            <Link to="/">home</Link>
+            <h1>Lista do Torneio</h1>
+            <Link to="/">Lobby</Link>
            <form onSubmit={salvar}>
                 <input type="text" onChange={(e)=>{setAtividade(e.target.value)}}></input>
              <button>Adicionar</button>
@@ -37,8 +37,8 @@ export default function ToDo() {
 
            {lista.map((ativ)=>
              <div key={ativ.identidade}>
-                <p>{ativ.atividade}</p>
-                <button onClick={() => remover(ativ.id)}>Delete</button>
+                <p>{ativ.classe}</p>
+                <button onClick={() => remover(ativ.id)}>Desclassificar</button>
              </div>
            )}
         </div>
