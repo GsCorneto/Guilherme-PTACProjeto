@@ -1,44 +1,51 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import './app.css' 
 
 export default function ToDo() {
-   const [atividade, setAtividade] = useState("");
+   const [nome, setAtividade] = useState("");
    const [lista, setLista] = useState([]);
-   const [identidade, setIdentidade] = useState(1);
+   const [inscricao, setIdentidade] = useState(1);
 
    const salvar = (e) =>{
     e.preventDefault();
     setLista([...lista, { //... serve para adicionar segmentos 
-        classe:classe, arma:arma, identidade:identidade
+        nome:nome,inscricao:inscricao
     }]);
-    setIdentidade(identidade + 1)
+    setIdentidade(inscricao + 1)
     alert("Inscrito no torneio!")
    };
 
      const remover = (id) =>{
       const auxLista = [];
-      lista.map((lista) => {
-        if (lista.id !== id) {
-           auxLista.push(lista);
+      lista.map((list) => {
+        if (list.inscricao !== id) {
+           auxLista.push(list);
       }
       });
+      console.log(id)
         setLista(auxLista);
      }
 
 
     return (
         <div>
-            <h1>Lista do Torneio</h1>
-            <Link to="/">Lobby</Link>
+            <h1>Inscrição do Torneio</h1>
+            
            <form onSubmit={salvar}>
                 <input type="text" onChange={(e)=>{setAtividade(e.target.value)}}></input>
+                <br/>
+               
+                {/* <input type="text" onChange={(a)=>{setAtividade(a.target.value)}}></input>  */}
              <button>Adicionar</button>
            </form>
+           <Link to="/">Lobby</Link>
 
+           <br/>
            {lista.map((ativ)=>
-             <div key={ativ.identidade}>
-                <p>{ativ.classe}</p>
-                <button onClick={() => remover(ativ.id)}>Desclassificar</button>
+             <div key={ativ.inscricao}>
+                <p>{ativ.nome}</p>
+                <button onClick={() => remover(ativ.inscricao)}>Desclassificar</button>
              </div>
            )}
         </div>
