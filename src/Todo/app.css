@@ -1,3 +1,55 @@
-p{
-    color: red
+h2{
+    color: rgb(189, 132, 132)
 }
+.botao{
+    border-color: #201d1d;
+    background-color: #e9a7a7;
+    border-radius: 35px;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 2px solid red;
+    background-color: white;
+  }
+
+  .container {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+  }
+
+  header{
+    font-size: 46px;
+    color: rgb(228, 153, 14);
+    background-color: #b8204d;
+    padding: 10px 40px;
+  
+  }
+
+  body{
+    background-color: #f993;
+    font-family: 'Rancho', 'cursive';
+    margin: 0;
+    padding: 0;
+  }
+
+  main{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+    justify-content: space-evenly;
+  }
+
+  footer{
+    font-size: 22px;
+    color: rgb(228, 153, 14);
+    background-color: #b8204d;
+    padding: 10px 40px;
+  }
+  
+  html {
+    margin: 0;
+    padding: 0;
+  }
