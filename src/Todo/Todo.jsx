@@ -32,17 +32,17 @@ export default function ToDo() {
         
         
         <div>
-         <header>
-            
+            <header>
             <h1>Inscrição do Torneio</h1>
             </header>
-            <img src="Todo/sword-svgrepo-com.svg"></img>
             <div class="container">
             <form onSubmit={salvar}>
+
                 <p>Nome:</p><input type="text" onChange={(e)=>{setAtividade(e.target.value)}}></input>
                 <br/>
                  <p>Poder:</p><input type="text" onChange={(a)=>{setAtividade(a.target.value)}}></input>
              <button>Adicionar</button>
+
            </form>
             </div>
            
@@ -50,7 +50,7 @@ export default function ToDo() {
 
            <br/>
            {lista.map((ativ)=>
-             <div key={ativ.inscricao}>
+             <div key={ativ.inscricao} class="card">
                 <h2>Nome:{ativ.nome}</h2>
                 <h2>Poder do combatente{ativ.poder}</h2>
                 <button class="botao" onClick={() => remover(ativ.inscricao)}>Desclassificar</button>

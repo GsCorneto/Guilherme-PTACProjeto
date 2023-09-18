@@ -18,13 +18,19 @@ input[type=text] {
     margin-left: auto;
     margin-right: auto;
     border: 1px solid;
+    background-color: #5ADBFF;;
+  }
+
+  .container-p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
   header{
-    font-size: 46px;
-    color: rgb(228, 153, 14);
-    background-color: #b8204d;
+    font-size: 22px;
+    color: #FE9000;
+    background-color: #3C6997;
     padding: 10px 40px;
+    text-align: center;
   
   }
 
@@ -33,6 +39,8 @@ input[type=text] {
     font-family: 'Rancho', 'cursive';
     margin: 0;
     padding: 0;
+    background-color: #FFDD4A;
+    
   }
 
   main{
@@ -45,11 +53,21 @@ input[type=text] {
   footer{
     font-size: 22px;
     color: rgb(228, 153, 14);
-    background-color: #b8204d;
+    background-color: #3C6997;
     padding: 10px 40px;
   }
-  
+
   html {
     margin: 0;
     padding: 0;
+  }
+
+  .card{
+  margin: 30px;
+  background-color: #ffff;
+  border: 1px solid #f46647;
+  display: inline-block;
+  overflow: hiddem;
+  height: 350px;
+  width: 250px;
   }
