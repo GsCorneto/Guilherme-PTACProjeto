@@ -6,11 +6,12 @@ export default function ToDo() {
    const [nome, setAtividade] = useState("");
    const [lista, setLista] = useState([]);
    const [inscricao, setIdentidade] = useState(1);
+   const [poder, setPoder] = useState("");
 
    const salvar = (e) =>{
     e.preventDefault();
     setLista([...lista, { //... serve para adicionar segmentos 
-        nome:nome, inscricao:inscricao, //poder:poder
+        nome:nome, inscricao:inscricao, poder:poder
     }]);
     setIdentidade(inscricao + 1)
     alert("Inscrito no torneio!")
@@ -40,7 +41,7 @@ export default function ToDo() {
 
                 <p>Nome:</p><input type="text" onChange={(e)=>{setAtividade(e.target.value)}}></input>
                 <br/>
-                 <p>Poder:</p><input type="text" onChange={(a)=>{setAtividade(a.target.value)}}></input>
+                 <p>Poder:</p><input type="text" onChange={(a)=>{setPoder(a.target.value)}}></input>
              <button>Adicionar</button>
 
            </form>
@@ -51,8 +52,9 @@ export default function ToDo() {
            <br/>
            {lista.map((ativ)=>
              <div key={ativ.inscricao} class="card">
-                <h2>Nome:{ativ.nome}</h2>
-                <h2>Poder do combatente{ativ.poder}</h2>
+                <h2>Nome: {ativ.nome}</h2>
+                <h2>Aniversário: {ativ.poder}</h2>
+
                 <button class="botao" onClick={() => remover(ativ.inscricao)}>Desclassificar</button>
              </div>
            )}
