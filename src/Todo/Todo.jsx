@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import './app.css' 
 
 export default function ToDo() {
-   const [nome, setAtividade] = useState("");
+   const [nome, setNome] = useState("");
    const [lista, setLista] = useState([]);
-   const [inscricao, setIdentidade] = useState(1);
+   const [inscricao, setInscricao] = useState(1);
    const [poder, setPoder] = useState("");
 
    const salvar = (e) =>{
@@ -13,7 +13,7 @@ export default function ToDo() {
     setLista([...lista, { //... serve para adicionar segmentos 
         nome:nome, inscricao:inscricao, poder:poder
     }]);
-    setIdentidade(inscricao + 1)
+    setInscricao(inscricao + 1)
     alert("Inscrito no torneio!")
    };
 
@@ -39,7 +39,7 @@ export default function ToDo() {
             <div class="container">
             <form onSubmit={salvar}>
 
-                <p>Nome:</p><input type="text" onChange={(e)=>{setAtividade(e.target.value)}}></input>
+                <p>Nome:</p><input type="text" onChange={(e)=>{setNome(e.target.value)}}></input>
                 <br/>
                  <p>Poder:</p><input type="text" onChange={(a)=>{setPoder(a.target.value)}}></input>
              <button>Adicionar</button>
@@ -47,7 +47,7 @@ export default function ToDo() {
            </form>
             </div>
            
-           <Link to="/">Lobby</Link>
+           
 
            <br/>
            {lista.map((ativ)=>
@@ -59,7 +59,7 @@ export default function ToDo() {
              </div>
            )}
 
-           <footer>Boa Luta!</footer>
+           <footer>Boa Luta!   <p>Retornar ao<Link to="/">Lobby</Link></p></footer>
         </div>
     );
 }
