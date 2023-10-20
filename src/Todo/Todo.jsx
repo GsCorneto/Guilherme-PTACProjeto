@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './app.css' 
 
+
 export default function ToDo() {
+  const listaLocalStorage = localStorage.getItem("Lista");
    const [nome, setNome] = useState("");
-   const [lista, setLista] = useState([]);
+   const [lista, setLista] = useState(listaLocalStorage || []);
    const [inscricao, setInscricao] = useState(1);
    const [poder, setPoder] = useState("");
+
+   useEffect(() => { localStorage.setItem("Lista", (lista)) },[lista]);
 
    const salvar = (e) =>{
     e.preventDefault();
