@@ -4,13 +4,13 @@ import './app.css'
 
 
 export default function ToDo() {
-  const listaLocalStorage = localStorage.getItem("Lista");
+  const listaLocalStorage = JSON.parse(listaLocalStorage.getItem("Lista"));
    const [nome, setNome] = useState("");
    const [lista, setLista] = useState(listaLocalStorage || []);
    const [inscricao, setInscricao] = useState(1);
    const [poder, setPoder] = useState("");
 
-   useEffect(() => { localStorage.setItem("Lista", (lista)) },[lista]);
+   useEffect(() => { localStorage.setItem("Lista", JSON.stringify(lista)) },[lista]);
 
    const salvar = (e) =>{
     e.preventDefault();
