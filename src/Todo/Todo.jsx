@@ -4,10 +4,10 @@ import './app.css'
 
 
 export default function ToDo() {
-  const listaLocalStorage = JSON.parse(listaLocalStorage.getItem("Lista"));
+  const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
    const [nome, setNome] = useState("");
-   const [lista, setLista] = useState(listaLocalStorage || []);
-   const [inscricao, setInscricao] = useState(1);
+   const [lista, setLista] = useState((listaLocalStorage) || []);
+   const [inscricao, setInscricao] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.inscricao + 1 || 1);
    const [poder, setPoder] = useState("");
 
    useEffect(() => { localStorage.setItem("Lista", JSON.stringify(lista)) },[lista]);
@@ -21,14 +21,14 @@ export default function ToDo() {
     alert("Inscrito no torneio!")
    };
 
-     const remover = (id) =>{
+     const remover = (inscricao) =>{
       const auxLista = [];
       lista.map((list) => {
-        if (list.inscricao !== id) {
+        if (list.inscricao !== inscricao) {
            auxLista.push(list);
       }
       });
-      console.log(id)
+      console.log(inscricao)
         setLista(auxLista);
      }
 
@@ -57,7 +57,7 @@ export default function ToDo() {
            {lista.map((ativ)=>
              <div key={ativ.inscricao} class="card">
                 <h2>Nome: {ativ.nome}</h2>
-                <h2>Aniversário: {ativ.poder}</h2>
+                <h2>Poder: {ativ.poder}</h2>
 
                 <button class="botao" onClick={() => remover(ativ.inscricao)}>Desclassificar</button>
              </div>
