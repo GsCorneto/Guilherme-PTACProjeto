@@ -34,8 +34,6 @@ export default function ToDo() {
 
 
     return (
-        
-        
         <div>
             <header>
             <h1>Inscrição do Torneio</h1>
@@ -51,15 +49,21 @@ export default function ToDo() {
            </form>
             </div>
            
-           
-
            <br/>
            {lista.map((ativ)=>
-             <div key={ativ.inscricao} class="card">
+             <div>
+               <ul key={ativ.inscricao}>
+
+                <Link to = {`/detalhe/${ativ.inscricao}`}>
+                  <li>{ativ.nome}</li>
+                </Link>
+
                 <h2>Nome: {ativ.nome}</h2>
+
                 <h2>Poder: {ativ.poder}</h2>
 
                 <button class="botao" onClick={() => remover(ativ.inscricao)}>Desclassificar</button>
+                </ul>
              </div>
            )}
 
