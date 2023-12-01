@@ -1,13 +1,11 @@
+import "./Compo.css"
+
 export default function Footer({nome}){
 
     return(
-       <div class="card">
-        
-       
-       
-       
-       
-       </div>
+        <footer>
+   
+        </footer>
 
     )
 }

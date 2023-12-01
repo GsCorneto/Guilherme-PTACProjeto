@@ -1,3 +1,11 @@
+footer{
+    font-size: 22px;
+      color: rgb(228, 153, 14);
+      background-color: #3C6997;
+      padding: 10px 40px;
+}
+
+
 .card{
     margin: 30px;
     background-color: #ffff;

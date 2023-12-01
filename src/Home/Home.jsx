@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import './home.css' 
+import"../Componentes/Footer"
+import"../Componentes/Card"
+import"../Componentes/Header"
 export default function Home() {
     
     return (
@@ -21,8 +24,6 @@ export default function Home() {
               <main>
                 <Link to="/todo">Adicionar campeão</Link>
               </main>
-
-       <footer></footer>
         </div>
 
     );
