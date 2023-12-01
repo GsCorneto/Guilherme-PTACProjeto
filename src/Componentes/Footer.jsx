@@ -1,8 +1,8 @@
-export default function Card({nome}){
+export default function Footer({nome}){
 
     return(
        <div class="card">
-         
+        
        
        
        

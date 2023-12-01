@@ -44,7 +44,7 @@ export default function ToDo() {
                 <p>Nome:</p><input type="text" onChange={(e)=>{setNome(e.target.value)}}></input>
                 <br/>
                  <p>Poder:</p><input type="text" onChange={(a)=>{setPoder(a.target.value)}}></input>
-             <button>Adicionar</button>
+             <button class="add">Adicionar</button>
 
            </form>
             </div>

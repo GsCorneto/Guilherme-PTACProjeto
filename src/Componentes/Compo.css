@@ -1,0 +1,25 @@
+.card{
+    margin: 30px;
+    background-color: #ffff;
+    border: 1px solid #f46647;
+    display: inline-block;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    border-radius: 25px;
+  }
+  .card h2{
+    padding-left: 80px;
+    margin: 0;
+    color:#b89520;
+  }
+  .card p{
+    padding: 5px;
+    margin: 0;
+    font-size: 18px;
+  }
+  .card img {
+    width: 200px;
+    height: 200px;
+    padding-left: 85px;
+  }
